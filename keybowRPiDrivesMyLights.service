@@ -1,0 +1,20 @@
+[Unit]
+Description=keybowRPiDrivesMyLights
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+Restart=always
+
+# Every 600 seconds (or 10 minutes)
+RestartSec=600
+
+StartLimitInterval=0
+
+WorkingDirectory=/home/pi/keybowRPiDrivesMyLights
+ExecStart=/home/pi/keybowRPiDrivesMyLights/launch.sh
+
+[Install]
+WantedBy=multi-user.target
