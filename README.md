@@ -44,6 +44,17 @@ Now, you just have to save the updated content of `wpa_supplicant.conf`, then un
 First step is done!
 
 ### Step 2 - SSH to the Pi Zero W
+Now that's the **tada** moment, just insert the micro SD Card in the slot, and power up thanks to USB cable! Wait 2 to 5 minutes for the first boot.
+
+Use your prefered IP scanner tool, or just connect to your box router to find the IP address of the Rapsberry Pi, then ```ssh pi@IP_ADDRESS```, the default password is ```raspberry```, and you will have the prompt waiting for you!
+
+Of course, I have to recommende to update your device's OS and change the default password.
+
+It's quite simple, you just have to type those two commands at the prompt:
+
+```sudo apt-get update && sudo apt-get upgrade -y```
+and
+```passwd```
 
 ### Step 3 - Install the lib for the mini
 
