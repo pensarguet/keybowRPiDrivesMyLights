@@ -18,10 +18,34 @@ Here are the component I used:
     
 ## How to use it
 ### Step 1 - Micro SD Card Setup
+So first step is to download the OS image, I used to download [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/) from the official [Raspberry](https://www.raspberrypi.com/) web site.
+
+Then you have to flash the OS to the micro SD card. Even if there are several option, I mainly used [Etcher](https://www.balena.io/etcher/) created by [Balena](https://www.balena.io/), that makes things very simple: You just have to select the image, select your MicroSD card, and flash!
+
+Because Etcher unmount the micro SD card after end of flashing process, you have to reinsert it, because there are 2 files to trick! You will observe that all the OS has been st into the `/boot` folder. Fist, in `/boot`, create a file called `ssh` without extension to enable SSH on the Raspberry Pi. Because you are moving forward screenless, you have to activate Wifi on the Raspberr Pi. To do so, you have to create on `/boot` a configuration file called `wpa_supplicant.conf` that will allow you to pre-configure the WiFi credentials. At first boot time, the Raspberry Pi will copy and use this as the default configuration file.
+
+In this file, place the following content and adapt it to your own Wifi configuration:
+```
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+ssid="WIFI_SSID"
+scan_ssid=1
+psk="WIFI_PASSWORD"
+key_mgmt=WPA-PSK
+}
+```
+> Note: More information can be found in the official [Raspberry Pi documentation](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-networking-2) on the section "Configuring Networking" of "Setting up a Headless Raspberry Pi"!
+
+Now, you just have to save the updated content of `wpa_supplicant.conf`, then unmount you micro SD card.
+
+First step is done!
 
 ### Step 2 - SSH to the Pi Zero W
 
-### Step 3 - Install the lib for the mini keybow
+### Step 3 - Install the lib for the mini
 
 ### Step 4 - Install the Python app as systemctl service
 
