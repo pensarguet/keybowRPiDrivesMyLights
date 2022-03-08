@@ -17,6 +17,13 @@ Here are the component I used:
 - [Shelly Duo - RGBW](https://shop.shelly.cloud/shelly-bulb-rgbw-e27-wifi-smart-home-automation#436) by [Shelly](https://shelly.cloud/)
     
 ## How to use it
+### Step 0 - Hardware setup
+For this project, I reused a spare [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) I already had. As I'm not mastering soldering, I used a solderless GPIO header thanks to [GPIO Hammer Header (Solderless)](https://shop.pimoroni.com/products/gpio-hammer-header?variant=35643241098) to give GPIO connectivity for the keyboard. Honestly if you can buy one natively soldered, I recommend to do so, here is the reference: [Raspberry Pi Zero WH](https://shop.pimoroni.com/products/raspberry-pi-zero-w?variant=39458414297171). 
+
+I used the [Keybow Kit (3-key)](https://shop.pimoroni.com/products/keybow-mini-3-key-macro-pad-kit?variant=27890390696019) that brings 3 RGB mechanical keys to trigger actions. Pimoroni team released some interesting material to [assemble the keybow mini](https://learn.pimoroni.com/article/assembling-keybow-mini).
+
+To manage the lights, I bough [Shelly Plug S](https://shop.shelly.cloud/shelly-plug-s-wifi-smart-home-automation#62) by [Shelly](https://shelly.cloud/), and I pre-ordered [Shelly Duo - RGBW](https://shop.shelly.cloud/shelly-bulb-rgbw-e27-wifi-smart-home-automation#436) in order to manage two lamps and a bulb.
+
 ### Step 1 - Micro SD Card Setup
 So first step is to download the OS image, I used to download [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/) from the official [Raspberry](https://www.raspberrypi.com/) web site.
 
