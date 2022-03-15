@@ -69,7 +69,17 @@ and
 
 ### Step 3 - Install the lib for the mini
 
+To start using the mini keybow, you have to Enable SPI via the following command: ```sudo raspi-config nonint do_spi 0```
+
+Then, all you have to do is to install the library that manage mini keybow hardware: ```pip3 install keybow```
+
 ### Step 4 - Install the Python app as systemctl service
+
+The python code of ``àpp.py```is doing the following:
+- Initiate a logger to manage maintenance and potential issues
+- Load config of the actions to trigger on and off for each devices from a json config file
+- Call setup function that put all RGB buttons in green
+- Manage action to trigger thanks to dedicated handlers, one for each button
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
