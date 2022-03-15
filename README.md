@@ -2,9 +2,10 @@
 Keybow RPi drives Shelly plugs / bulbs
 
 ## Description
-With the covid, and by force of circumstance, I started to work at home by obligation then by pleasure until I dedicated a room at home with my own setup. 
-With a house on 2 floors, and moments when I am in a meeting, recording videos or simply available, I wanted to manage the availability of access to the room ... in short a kind of "On Air" to indicate my status. Ok, I can hear you from where you are... why didn't I just buy one? Well, it was too simple, and I like to make things!  
+Basically this project enables to switch on and off a device (plug or bulb) based on URL call from a mini keybow plugged on a Raspberry Pi!
 
+With the covid, and by force of circumstance, I started to work at home by obligation then by pleasure until I dedicated a room at home with my own setup. 
+With a house on 2 floors, and moments when I am in a meeting, recording videos or simply available, I wanted to manage the availability of access to the room ... in short a kind of "On Air" to indicate my status. Ok, I can hear you from where you are... why didn't I just buy one? Well, it was too simple, and I like to make things! 
 ## Setup
 So, it is quite naturally that I turned to [Raspberry](https://www.raspberrypi.com/) with its smaller form factor, [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) on which I could adapt a mini keyboard. To manage the lights, after some chat with friends on Twitter, it appears that [Shelly](https://shelly.cloud/) solutions seamed to be the most appropriate for want I wanted to do, switching on and off thanks to HTTP requests
 
@@ -73,13 +74,19 @@ To start using the mini keybow, you have to Enable SPI via the following command
 
 Then, all you have to do is to install the library that manage mini keybow hardware: ```pip3 install keybow```
 
-### Step 4 - Install the Python app as systemctl service
+### Step 4 - The Python app
 
-The python code of ``àpp.py```is doing the following:
-- Initiate a logger to manage maintenance and potential issues
+The python code of ```app.py```is quite simple and is doing the following:
+- Initiate a logger to manage maintenance and potential issues properly
 - Load config of the actions to trigger on and off for each devices from a json config file
 - Call setup function that put all RGB buttons in green
-- Manage action to trigger thanks to dedicated handlers, one for each button
+- Manage action to trigger thanks to dedicated handlers, one for each button, swapping from green to red, then to red to green
+
+### Step 5 - Install the Python app as systemctl service
+
+Once you have cloned the project, just ```cd keybowRPiDrivesMyLights```, then ```./install.sh``` that will install the python app as a service that will be launched each time the RaspberryPi will start.
+
+This script shell will copy the ```keybowRPiDrivesMyLights.service```to ```/etc/systemd/system```, then enable the service via  ```sudo systemctl enable keybowRPiDrivesMyLights``` and start the service via ```sudo systemctl start keybowRPiDrivesMyLights```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
