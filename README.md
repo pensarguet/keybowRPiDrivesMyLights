@@ -68,13 +68,13 @@ It's quite simple, you just have to type those two commands at the prompt:
 and
 ```passwd```
 
-### Step 3 - Install the lib for the mini
+### Step 3 - Install the lib for the mini keybow
 
 To start using the mini keybow, you have to Enable SPI via the following command: ```sudo raspi-config nonint do_spi 0```
 
 Then, all you have to do is to install the library that manage mini keybow hardware: ```pip3 install keybow```
 
-### Step 4 - The Python app
+### Step 4 - Understand the Python app
 
 The python code of ```app.py```is quite simple and is doing the following:
 - Initiate a logger to manage maintenance and potential issues properly
