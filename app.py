@@ -6,6 +6,11 @@ import json
 import sys
 import logging
 
+log_level_info = {'logging.DEBUG': logging.DEBUG, 
+                        'logging.INFO': logging.INFO,
+                        'logging.WARNING': logging.WARNING,
+                        'logging.ERROR': logging.ERROR,
+                        }
 config = {}
 myButtonState = [0,0,0]
 
@@ -106,14 +111,20 @@ def handle_key(index, state):
             myButtonState[index] = 1
             activate(config["plug2"]["URL-on"])
 
-logging.basicConfig(filename='keybowRPiDrivesMyLights.log',format='%(levelname)s:%(asctime)s:%(message)s', level=logging.DEBUG)
-logging.info("Starting")
 try:
-   with open("./config.json") as f:
+    with open("./config.json") as f:
         config = json.loads(f.read())
 except Exception as e:
-   sys.stderr.write("Error: {}".format(e))
-   sys.exit(1)
+    sys.stderr.write("Error: {}".format(e))
+    sys.exit(1)
+
+my_log_level_from_config = config['logger']['level']
+my_log_level = log_level_info.get(my_log_level_from_config, logging.ERROR)
+#logging.basicConfig(filename=config["logger"]["loggingFileName"], encoding='utf-8',format='%(asctime)s, %(levelname)s %(message)s', level=my_log_level )
+logging.basicConfig(filename=config["logger"]["loggingFileName"],format='%(levelname)s:%(asctime)s:%(message)s', level=my_log_level)
+
+logging.info("Starting")
+
 setup()
 while True:
    keybow.show()

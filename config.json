@@ -1,5 +1,8 @@
 {
-    "loggingFileName": "RPiKeybowActivateURL.log",
+    "logger": {
+        "level": "logging.DEBUG",
+        "loggingFileName": "RPiKeybowActivateURL.log"
+    },
     "plug0": {
         "URL-on": "http://192.168.1.32/relay/0?turn=on",
         "URL-off": "http://192.168.1.32/relay/0?turn=off"
