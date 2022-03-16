@@ -62,12 +62,12 @@ def handle_key(index, state):
             keybow.set_led(index, 0, 255, 0)
             keybow.show()
             myButtonState[index] = 0
-            activate(config["plug0"]["URL-off"])
+            activate(config["devices"]["device0"]["URL-off"])
         else:
             keybow.set_led(index, 255, 0, 0)
             keybow.show()
             myButtonState[index] = 1
-            activate(config["plug0"]["URL-on"])
+            activate(config["devices"]["device0"]["URL-on"])
 
 @keybow.on(index=1)
 def handle_key(index, state):
@@ -83,12 +83,12 @@ def handle_key(index, state):
             keybow.set_led(index, 0, 255, 0)
             keybow.show()
             myButtonState[index] = 0
-            activate(config["plug1"]["URL-off"])
+            activate(config["devices"]["device1"]["URL-off"])
         else:
             keybow.set_led(index, 255, 0, 0)
             keybow.show()
             myButtonState[index] = 1
-            activate(config["plug1"]["URL-on"])
+            activate(config["devices"]["device1"]["URL-on"])
 
 @keybow.on(index=2)
 def handle_key(index, state):
@@ -104,12 +104,12 @@ def handle_key(index, state):
             keybow.set_led(index, 0, 255, 0)
             keybow.show()
             myButtonState[index] = 0
-            activate(config["plug2"]["URL-off"])
+            activate(config["devices"]["device2"]["URL-off"])
         else:
             keybow.set_led(index, 255, 0, 0)
             keybow.show()
             myButtonState[index] = 1
-            activate(config["plug2"]["URL-on"])
+            activate(config["devices"]["device2"]["URL-on"])
 
 try:
     with open("./config.json") as f:
@@ -120,7 +120,6 @@ except Exception as e:
 
 my_log_level_from_config = config['logger']['level']
 my_log_level = log_level_info.get(my_log_level_from_config, logging.ERROR)
-#logging.basicConfig(filename=config["logger"]["loggingFileName"], encoding='utf-8',format='%(asctime)s, %(levelname)s %(message)s', level=my_log_level )
 logging.basicConfig(filename=config["logger"]["loggingFileName"],format='%(levelname)s:%(asctime)s:%(message)s', level=my_log_level)
 
 logging.info("Starting")
