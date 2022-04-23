@@ -25,9 +25,11 @@ I used the [Keybow Kit (3-key)](https://shop.pimoroni.com/products/keybow-mini-3
 
 ![RaspberryPi Zeo HW with mini-keybow - front view](images/RPiZeroHWKeybow_front.jpg)
 
-To manage the lights, I bough [Shelly Plug S](https://shop.shelly.cloud/shelly-plug-s-wifi-smart-home-automation#62) by [Shelly](https://shelly.cloud/), and I pre-ordered [Shelly Duo - RGBW](https://shop.shelly.cloud/shelly-bulb-rgbw-e27-wifi-smart-home-automation#436) in order to manage two lamps and a bulb.
+To manage the lights, I bough [Shelly Plug S](https://shop.shelly.cloud/shelly-plug-s-wifi-smart-home-automation#62) and a [Shelly Duo - RGBW](https://shop.shelly.cloud/shelly-bulb-rgbw-e27-wifi-smart-home-automation#436) by [Shelly](https://shelly.cloud/) in order to manage two lamps and a bulb.
 
 ![Shelly Plug S](images/ShellyPlugS.jpg)
+
+![Shelly Bulb](images/ShellyBulb.jpg)
 
 ### Step 1 - Micro SD Card Setup
 So first step is to download the OS image, I used to download [Raspberry Pi OS Lite](https://www.raspberrypi.com/software/operating-systems/) from the official [Raspberry](https://www.raspberrypi.com/) web site.
