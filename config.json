@@ -6,8 +6,8 @@
     "devices":{
         "device0": {
             "type": "plug",
-            "URL-on": "http://192.168.1.32/relay/0?turn=on",
-            "URL-off": "http://192.168.1.32/relay/0?turn=off"
+            "URL-on": "http://192.168.1.13/relay/0?turn=on",
+            "URL-off": "http://192.168.1.13/relay/0?turn=off"
         },
         "device1": {
             "type": "plug",
@@ -15,9 +15,9 @@
             "URL-off": "http://192.168.1.29/relay/0?turn=off" 
         },
         "device2": {
-            "type": "plug",
-            "URL-on": "",
-            "URL-off": ""
+            "type": "bulb",
+            "URL-on": "http://192.168.1.37/color/0?turn=on&red=255&white=0&gain=10",
+            "URL-off": "http://192.168.1.37/color/0?turn=off&white=255&red=0"
         }
     }
 }
