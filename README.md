@@ -36,7 +36,7 @@ So first step is to download the OS image, I used to download [Raspberry Pi OS L
 
 Then you have to flash the OS to the micro SD card. Even if there are several option, I mainly used [Etcher](https://www.balena.io/etcher/) created by [Balena](https://www.balena.io/), that makes things very simple: You just have to select the image, select your MicroSD card, and flash!
 
-Because Etcher unmount the micro SD card after end of flashing process, you have to reinsert it, because there are 2 files to trick! You will observe that all the OS has been st into the `/boot` folder. Fist, in `/boot`, create a file called `ssh` without extension to enable SSH on the Raspberry Pi. Because you are moving forward screenless, you have to activate Wifi on the Raspberr Pi. To do so, you have to create on `/boot` a configuration file called `wpa_supplicant.conf` that will allow you to pre-configure the WiFi credentials. At first boot time, the Raspberry Pi will copy and use this as the default configuration file.
+Because Etcher unmount the micro SD card after end of flashing process, you have to reinsert it, because there are 2 files to trick! You will observe that all the OS has been stored into the `/boot` folder. First, in `/boot`, create a file called `ssh` without extension to enable SSH on the Raspberry Pi. Because you are moving forward screenless, you have to activate Wifi on the Raspberr Pi. To do so, you have to create on `/boot` a configuration file called `wpa_supplicant.conf` that will allow you to pre-configure the WiFi credentials. At first boot time, the Raspberry Pi will copy and use this as the default configuration file.
 
 In this file, place the following content and adapt it to your own Wifi configuration:
 ```
